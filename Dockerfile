@@ -18,7 +18,7 @@ RUN groupadd -r rbot -f -g 1001 && \
 
 USER 1001
 ENV GEM_HOME=${HOME}/.gems
-ENV PATH=${HOME}/.gems/bin:${PATH}
+ENV PATH=${HOME}/bin:${PATH}
 
 RUN . ${ENTRYPOINT} && gem install -N mechanize tzinfo tokyocabinet && rm -rf .gems/cache/
 RUN cd /tmp && \
